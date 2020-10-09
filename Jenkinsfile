@@ -1,8 +1,9 @@
 pipeline {
-    agent any
+    agent {docker { image 'openjdk' } }
     stages {
         stage('build') {
             steps {
+                sh 'java -version'
                 echo "Building Application"         
             }
         }
